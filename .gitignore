@@ -1,0 +1,28 @@
+build/
+gradle/
+.gradle/
+.idea/
+gradlew
+gradlew.bat
+local.properties
+*.iml
+
+# Local files
+local.properties
+
+# Gradle files
+.gradle/
+build/
+gradle/
+gradlew
+gradlew.bat
+
+# IntelliJ files
+.idea/
+.navigation/
+captures/
+*.iml
+
+# OS X files
+._*
+.DS_Store

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Badger Example</string>
+    <string name="reset_badges">Reset Badges</string>
+</resources>

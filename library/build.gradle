@@ -1,0 +1,25 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion xTargetSdkVersion
+    buildToolsVersion xBuildToolsVersion
+
+    defaultConfig {
+        minSdkVersion 9
+        targetSdkVersion xTargetSdkVersion
+
+        versionCode 1
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+}
+
+dependencies {
+    provided "com.android.support:support-annotations:$androidSupportVersion"
+    androidTestCompile 'com.android.support.test:runner:0.5'
+    androidTestCompile 'org.hamcrest:hamcrest-library:1.3'
+}

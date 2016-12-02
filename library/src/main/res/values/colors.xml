@@ -1,0 +1,4 @@
+<resources>
+    <color name="badgeShapeColor">#ff444444</color>
+    <color name="badgeTextColor">#ffffffff</color>
+</resources>

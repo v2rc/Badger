@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
 
 android {
     compileSdkVersion xTargetSdkVersion
@@ -22,4 +23,30 @@ dependencies {
     provided "com.android.support:support-annotations:$androidSupportVersion"
     androidTestCompile 'com.android.support.test:runner:0.5'
     androidTestCompile 'org.hamcrest:hamcrest-library:1.3'
+}
+
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from android.sourceSets.main.java.srcDirs
+}
+
+task javadoc(type: Javadoc) {
+    failOnError false
+    source = android.sourceSets.main.java.sourceFiles
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+    classpath += configurations.provided
+    options {
+        links "https://d.android.com/reference/"
+        linksOffline "https://d.android.com/reference/", "${android.sdkDirectory}/docs/reference/"
+    }
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+artifacts {
+    archives sourcesJar
+    archives javadocJar
 }

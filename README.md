@@ -74,7 +74,7 @@ size of the original drawable.
 
 #### aspectRatio
 The `aspectRatio` determines the actual shape of the badge itself. It is the
-ration between width and height. A value bigger than 1 makes the badge wider
+ratio between width and height. A value bigger than 1 makes the badge wider
 than high, a value smaller than 1 makes it higher than wide.
 
 #### gravity

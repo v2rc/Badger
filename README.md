@@ -118,8 +118,8 @@ License
     limitations under the License.
 
 
-  [1]: https://travis-ci.org/volders/badger.svg?branch=master
-  [2]: https://travis-ci.org/volders/badger
+  [1]: https://travis-ci.org/volders/Badger.svg?branch=master
+  [2]: https://travis-ci.org/volders/Badger
   [3]: https://jitpack.io/v/berlin.volders/badger.svg
   [4]: https://jitpack.io/#berlin.volders/badger
   [5]: https://img.shields.io/badge/Methods%20count-110-e91e63.svg

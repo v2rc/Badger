@@ -111,6 +111,12 @@ Shortcomings
 The `TextBadge` only supports the RTL layout direction for Android Marshmallow
 and later.
 
+Badger requires to have the `buildToolsVersion` up-to-date. Please update to the lasted `buildToolsVersion` if the following issue appears:
+
+    Error:(330) Attribute "colorAccent" has already been defined
+    Error:(573) Attribute "titleTextColor" has already been defined
+    Error:Execution failed for task ':app:processDebugResources'.
+    > com.android.ide.common.process.ProcessException: Failed to execute aapt
 
 License
 -------

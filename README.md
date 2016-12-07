@@ -90,8 +90,20 @@ badge.
 Installation
 ------------
 
-    compile "berlin.volders:badger:$badgerVersion"
+**Step 1** Add JitPack in your root build.gradle at the end of repositories:
 
+    allprojects {
+        repositories {
+            ...
+            maven { url 'https://jitpack.io' }
+        }
+    }
+
+**Step 2** Add the dependency
+
+    dependencies {
+        compile "berlin.volders:badger:$badgerVersion"
+    }
 
 Shortcomings
 ------------

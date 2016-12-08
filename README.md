@@ -1,5 +1,6 @@
-![Icon](assets/icon.png) Badger [![Build][1]][2] [![Release][3]][4] [![Methods][5]][6]
-======================================================================================
+![Icon](assets/icon.png) Badger
+===============================
+[![Build][1]][2] [![Release][3]][4] [![Methods][5]][6] [![Arsenal][7]][8]
 
 *Badger* is a generalized single purpose library for adding badges to drawables
 in general and menu items in particular.
@@ -28,7 +29,8 @@ a badge already set, this one gets reused instead.
 #### Add a badge to a `Drawable`
 
     Badger<?> badger = Badger.sett(drawable, badgeFactory);
-	BadgeDrawable badge = badger.badge;
+    BadgeDrawable badge = badger.badge;
+    drawable = badger.drawable;
 
 
 #### The `BadgeDrawable`
@@ -142,4 +144,6 @@ License
   [4]: https://jitpack.io/#berlin.volders/badger
   [5]: https://img.shields.io/badge/Methods%20count-110-e91e63.svg
   [6]: http://www.methodscount.com/?lib=berlin.volders%3Abadger%3A%2B
+  [7]: https://img.shields.io/badge/Android%20Arsenal-Badger-blue.svg?style=flat
+  [8]: https://android-arsenal.com/details/1/4794
   [sett]: https://en.oxforddictionaries.com/definition/sett

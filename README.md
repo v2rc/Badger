@@ -23,15 +23,17 @@ a badge already set, this one gets reused instead.
 
 #### Add a badge to a `MenuItem`
 
-    BadgeDrawable badge = Badger.sett(menuItem, badgeFactory);
-
+```java
+BadgeDrawable badge = Badger.sett(menuItem, badgeFactory);
+```
 
 #### Add a badge to a `Drawable`
 
-    Badger<?> badger = Badger.sett(drawable, badgeFactory);
-    BadgeDrawable badge = badger.badge;
-    drawable = badger.drawable;
-
+```java
+Badger<?> badger = Badger.sett(drawable, badgeFactory);
+BadgeDrawable badge = badger.badge;
+drawable = badger.drawable;
+```
 
 #### The `BadgeDrawable`
 
@@ -45,9 +47,11 @@ purpose implementation `CountBadge`.
 The type of the badge itself is determined by the implementation of the
 `BadgeDrawable.Factory` supplied.
 
-    public interface Factory<T extends BadgeDrawable> {
-        T createBadge();
-    }
+```java
+public interface Factory<T extends BadgeDrawable> {
+    T createBadge();
+}
+```
 
 The provided `BadgeDrawable` implementations define their own factories
 `TextBadge.Factory` and `CountBadge.Factory`.
@@ -65,10 +69,11 @@ actual size and position of the badge itself.
 
 ![Example](assets/example.png)
 
-    BadgeShape.oval(1f, 2f, Gravity.BOTTOM) // scale = 1 | aspectRatio = 2
-    BadgeShape.square(1f, Gravity.NO_GRAVITY, .5f) // scale = 1 | radiusFactor = 0.5
-    BadgeShape.circle(.5f, Gravity.END | Gravity.TOP) // scale = 0.5
-
+```java
+BadgeShape.oval(1f, 2f, Gravity.BOTTOM) // scale = 1 | aspectRatio = 2
+BadgeShape.square(1f, Gravity.NO_GRAVITY, .5f) // scale = 1 | radiusFactor = 0.5
+BadgeShape.circle(.5f, Gravity.END | Gravity.TOP) // scale = 0.5
+```
 
 #### scale
 The `scale` determines the actual size of the badge drawable relative to the
@@ -94,18 +99,22 @@ Installation
 
 **Step 1** Add JitPack in your root build.gradle at the end of repositories:
 
-    allprojects {
-        repositories {
-            ...
-            maven { url 'https://jitpack.io' }
-        }
+```groovy
+allprojects {
+    repositories {
+        ...
+        maven { url 'https://jitpack.io' }
     }
+}
+```
 
 **Step 2** Add the dependency
 
-    dependencies {
-        compile "berlin.volders:badger:$badgerVersion"
-    }
+```groovy
+dependencies {
+    compile "berlin.volders:badger:$badgerVersion"
+}
+```
 
 Shortcomings
 ------------

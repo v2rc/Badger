@@ -44,7 +44,7 @@ class TestBadgeShape extends BadgeShape {
     }
 
     void assertCanvas(Canvas canvas) {
-        assertThat(this.region, equalTo(region));
+        assertThat(this.canvas, equalTo(canvas));
     }
 
     void assertRegion(Rect region) {

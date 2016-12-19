@@ -164,7 +164,7 @@ public class TextBadge extends BadgeDrawable {
 
     @SuppressLint("NewApi")
     @SuppressWarnings("deprecation")
-    private static int badgeShapeColor(Context context) {
+    static int badgeShapeColor(Context context) {
         Resources.Theme theme = context.getTheme();
         TypedValue typedValue = new TypedValue();
         if (theme.resolveAttribute(R.attr.badgeShapeColor, typedValue, true)) {
@@ -184,7 +184,7 @@ public class TextBadge extends BadgeDrawable {
 
     @SuppressLint("NewApi")
     @SuppressWarnings("deprecation")
-    private static int badgeTextColor(Context context) {
+    static int badgeTextColor(Context context) {
         Resources.Theme theme = context.getTheme();
         TypedValue typedValue = new TypedValue();
         if (theme.resolveAttribute(R.attr.badgeTextColor, typedValue, true)) {
@@ -213,7 +213,7 @@ public class TextBadge extends BadgeDrawable {
          * The badge shape
          */
         @NonNull
-        protected BadgeShape shape;
+        protected final BadgeShape shape;
         /**
          * The badge color
          */

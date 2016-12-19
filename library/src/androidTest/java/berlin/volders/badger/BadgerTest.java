@@ -18,7 +18,9 @@ package berlin.volders.badger;
 
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
+import android.support.test.InstrumentationRegistry;
 import android.view.MenuItem;
+import android.widget.ImageView;
 
 import org.junit.Test;
 
@@ -82,6 +84,18 @@ public class BadgerTest {
         TestBadgeDrawable badge = Badger.sett(menuItem, factory);
 
         assertBadged(menuItem.getIcon(), badge, drawables);
+    }
+
+    @Test
+    public void sett_on_ImageView() throws Exception {
+        Drawable[] drawables = {new TestDrawable(), new TestDrawable()};
+        LayerDrawable layer = new LayerDrawable(drawables);
+        ImageView imageView = new ImageView(InstrumentationRegistry.getContext());
+        imageView.setImageDrawable(layer);
+
+        TestBadgeDrawable badge = Badger.sett(imageView, factory);
+
+        assertBadged(imageView.getDrawable(), badge, drawables);
     }
 
     void assertBadged(Drawable drawable, TestBadgeDrawable badge, Drawable... drawables) {

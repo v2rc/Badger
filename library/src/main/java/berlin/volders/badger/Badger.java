@@ -20,6 +20,7 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
 import android.support.annotation.NonNull;
 import android.view.MenuItem;
+import android.widget.ImageView;
 
 /**
  * Utility to wrap a drawable with a badge on it.
@@ -45,6 +46,7 @@ public class Badger<T extends BadgeDrawable> {
      *
      * @param drawable to add the badge to
      * @param factory  creating a new badge
+     * @param <T>      the subtype of {@code BadgeDrawable} to create
      * @return the {@code Badger} holding the
      */
     public static <T extends BadgeDrawable> Badger<T>
@@ -84,12 +86,28 @@ public class Badger<T extends BadgeDrawable> {
      *
      * @param item    to add the badge to
      * @param factory creating a new badge
+     * @param <T>     the subtype of {@code BadgeDrawable} to create
      * @return the badge drawable
      */
     public static <T extends BadgeDrawable> T
     sett(@NonNull MenuItem item, @NonNull BadgeDrawable.Factory<? extends T> factory) {
         Badger<T> badger = sett(item.getIcon(), factory);
         item.setIcon(badger.drawable);
+        return badger.badge;
+    }
+
+    /**
+     * Wraps the image of an {@link ImageView} with a badge
+     *
+     * @param view    to add the badge to
+     * @param factory creating a new badge
+     * @param <T>     the subtype of {@code BadgeDrawable} to create
+     * @return the badge drawable
+     */
+    public static <T extends BadgeDrawable> T
+    sett(@NonNull ImageView view, @NonNull BadgeDrawable.Factory<? extends T> factory) {
+        Badger<T> badger = sett(view.getDrawable(), factory);
+        view.setImageDrawable(badger.drawable);
         return badger.badge;
     }
 }

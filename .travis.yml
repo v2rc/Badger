@@ -17,7 +17,9 @@ git:
   depth: 3
 
 branches:
-  only: master
+  only:
+    - master
+    - dev
 
 before_install:
   - gradle :wrapper --configure-on-demand

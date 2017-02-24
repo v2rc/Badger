@@ -27,6 +27,12 @@ a badge already set, this one gets reused instead.
 BadgeDrawable badge = Badger.sett(menuItem, badgeFactory);
 ```
 
+#### Add a badge to an `ImageView`
+
+```java
+BadgeDrawable badge = Badger.sett(imageView, badgeFactory);
+```
+
 #### Add a badge to a `Drawable`
 
 ```java

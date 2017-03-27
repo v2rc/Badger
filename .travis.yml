@@ -6,7 +6,7 @@ android:
     - tools
     - tools
     - platform-tools
-    - build-tools-25.0.1
+    - build-tools-25.0.2
     - android-25
     - android-24
     - extra-android-support
@@ -22,7 +22,7 @@ branches:
     - dev
 
 before_install:
-  - gradle :wrapper --configure-on-demand
+  - gradle wrapper -b wrapper.gradle
 
 before_script:
   - echo no | android create avd -f -n test -t android-24 -b armeabi-v7a

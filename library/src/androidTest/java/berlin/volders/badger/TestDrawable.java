@@ -21,6 +21,7 @@ import android.graphics.ColorFilter;
 import android.graphics.PixelFormat;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 
 class TestDrawable extends Drawable {
 
@@ -39,5 +40,22 @@ class TestDrawable extends Drawable {
     @Override
     public int getOpacity() {
         return PixelFormat.UNKNOWN;
+    }
+
+    @Nullable
+    @Override
+    public ConstantState getConstantState() {
+        return new ConstantState() {
+            @NonNull
+            @Override
+            public Drawable newDrawable() {
+                return TestDrawable.this;
+            }
+
+            @Override
+            public int getChangingConfigurations() {
+                return 0;
+            }
+        };
     }
 }

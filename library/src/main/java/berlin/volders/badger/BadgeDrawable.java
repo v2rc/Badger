@@ -20,6 +20,7 @@ import android.graphics.ColorFilter;
 import android.graphics.PixelFormat;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.IntRange;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
 /**
@@ -83,5 +84,28 @@ public abstract class BadgeDrawable extends Drawable {
      */
     public interface Factory<T extends BadgeDrawable> {
         T createBadge();
+    }
+
+    @Nullable
+    @Override
+    public ConstantState getConstantState() {
+        return new DummyState();
+    }
+
+    private class DummyState extends ConstantState {
+
+        DummyState() {
+        }
+
+        @NonNull
+        @Override
+        public Drawable newDrawable() {
+            return BadgeDrawable.this;
+        }
+
+        @Override
+        public int getChangingConfigurations() {
+            return 0;
+        }
     }
 }

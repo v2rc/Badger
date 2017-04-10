@@ -98,6 +98,15 @@ public class BadgerTest {
         assertBadged(imageView.getDrawable(), badge, drawables);
     }
 
+    @Test
+    public void sett_and_mutate() {
+        Drawable[] drawables = {factory.createBadge(), new TestDrawable()};
+        LayerDrawable layer = new LayerDrawable(drawables);
+        layer.setId(0, R.id.badger_drawable);
+
+        Badger.sett(layer, factory).drawable.mutate();
+    }
+
     void assertBadged(Drawable drawable, TestBadgeDrawable badge, Drawable... drawables) {
         assertThat(drawable, instanceOf(LayerDrawable.class));
         LayerDrawable layer = (LayerDrawable) drawable;

@@ -8,10 +8,7 @@ android:
     - platform-tools
     - build-tools-25.0.2
     - android-25
-    - android-24
-    - extra-android-support
     - extra-android-m2repository
-    - sys-img-armeabi-v7a-android-24
 
 git:
   depth: 3
@@ -22,10 +19,10 @@ branches:
     - dev
 
 before_install:
-  - gradle wrapper -b wrapper.gradle
+  - gradle :wrapper --configure-on-demand
 
 before_script:
-  - echo no | android create avd -f -n test -t android-24 -b armeabi-v7a
+  - echo no | android create avd -f -n test -t android-19 -b armeabi-v7a
   - emulator -avd test -no-window &
   - android-wait-for-emulator
 
@@ -37,3 +34,4 @@ cache:
   directories:
     - $HOME/.gradle/caches/
     - $HOME/.gradle/wrapper/
+    - $HOME/.android/build-cache

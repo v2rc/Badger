@@ -4,7 +4,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.1'
+        classpath 'com.android.tools.build:gradle:2.3.3'
         classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
     }
 }
@@ -12,11 +12,14 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
+        maven {
+            url "https://maven.google.com"
+        }
     }
 }
 
 ext {
-    androidSupportVersion = '25.3.1'
+    androidSupportVersion = '25.4.0'
     xBuildToolsVersion = '25.0.2'
     xTargetSdkVersion = 25
 }

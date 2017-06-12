@@ -39,7 +39,7 @@ public class BadgerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_badger);
         ovalFactory = new CountBadge.Factory(this, BadgeShape.oval(1f, 2f, Gravity.BOTTOM));
         squareFactory = new CountBadge.Factory(this, BadgeShape.square(1f, Gravity.NO_GRAVITY, .5f));
-        circleFactory = new CountBadge.Factory(this, BadgeShape.circle(.5f, Gravity.END | Gravity.TOP));
+        circleFactory = new CountBadge.Factory(this, new CustomBadgeShape(this, .5f, Gravity.END | Gravity.TOP));
     }
 
     @Override

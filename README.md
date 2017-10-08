@@ -2,8 +2,8 @@
 ===============================
 [![Build][1]][2]
 [![Release][3]][4]
-[![Methods][5]][6]
-[![Arsenal][7]][8]
+[![Versions][7]][8]
+
 
 *Badger* is a generalized single purpose library for adding badges to drawables
 in general and menu items in particular.
@@ -121,7 +121,15 @@ allprojects {
 
 ```groovy
 dependencies {
-    compile "berlin.volders:badger:$badgerVersion"
+    compile "com.github.v2rc:badger:$badgerVersion"
+}
+```
+
+or for the legacy version
+
+```groovy
+dependencies {
+    compile 'berlin.volders:badger:0.2.1'
 }
 ```
 
@@ -157,11 +165,9 @@ License
 
 
   [sett]: https://en.oxforddictionaries.com/definition/sett
-  [1]: https://travis-ci.org/volders/Badger.svg?branch=master
-  [2]: https://travis-ci.org/volders/Badger
-  [3]: https://jitpack.io/v/berlin.volders/badger.svg
-  [4]: https://jitpack.io/#berlin.volders/badger
-  [5]: https://img.shields.io/badge/Methods%20count-116-e91e63.svg
-  [6]: http://www.methodscount.com/?lib=berlin.volders%3Abadger%3A%2B
-  [7]: https://img.shields.io/badge/Android%20Arsenal-Badger-blue.svg
-  [8]: https://android-arsenal.com/details/1/4794
+  [1]: https://travis-ci.org/v2rc/Badger.svg?branch=master
+  [2]: https://travis-ci.org/v2rc/Badger
+  [3]: https://jitpack.io/v/v2rc/badger.svg
+  [4]: https://jitpack.io/#v2rc/badger
+  [7]: https://asapi.herokuapp.com/com.github.v2rc/badger@svg
+  [8]: https://asapi.herokuapp.com/com.github.v2rc/badger

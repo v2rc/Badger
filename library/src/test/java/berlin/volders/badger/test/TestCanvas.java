@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package berlin.volders.badger;
+package berlin.volders.badger.test;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -29,7 +29,7 @@ import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.nullValue;
 import static org.junit.Assert.assertThat;
 
-class TestCanvas extends Canvas {
+public class TestCanvas extends Canvas {
 
     private Shape shape;
     private RectF rect;
@@ -66,7 +66,7 @@ class TestCanvas extends Canvas {
         this.textColor = paint.getColor();
     }
 
-    void assertDrawn(Shape shape, Rect rect, Object... params) {
+    public void assertDrawn(Shape shape, Rect rect, Object... params) {
         assertThat(this.shape, is(shape));
         assertThat(this.rect, equalTo(new RectF(rect)));
         if (params.length == 0) {
@@ -76,18 +76,18 @@ class TestCanvas extends Canvas {
         }
     }
 
-    void assertNothingDrawn() {
+    public void assertNothingDrawn() {
         assertThat(shape, nullValue());
         assertThat(rect, nullValue());
         assertThat(params, nullValue());
         assertThat(textColor, is(0));
     }
 
-    void assertTextColor(int textColor) {
+    public void assertTextColor(int textColor) {
         assertThat(this.textColor, is(textColor));
     }
 
-    enum Shape {
+    public enum Shape {
         OVAL, RECT, ROUND_RECT
     }
 }

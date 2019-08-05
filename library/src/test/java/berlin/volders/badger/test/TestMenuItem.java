@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package berlin.volders.badger;
+package berlin.volders.badger.test;
 
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
@@ -24,7 +24,7 @@ import android.view.MenuItem;
 import android.view.SubMenu;
 import android.view.View;
 
-class TestMenuItem implements MenuItem {
+public class TestMenuItem implements MenuItem {
 
     private Drawable icon;
 

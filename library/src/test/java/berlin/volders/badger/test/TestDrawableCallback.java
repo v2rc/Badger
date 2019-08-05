@@ -14,35 +14,38 @@
  * limitations under the License.
  */
 
-package berlin.volders.badger;
+package berlin.volders.badger.test;
 
-import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 
 import androidx.annotation.NonNull;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
-class TestBadgeDrawable extends BadgeDrawable {
+public class TestDrawableCallback implements Drawable.Callback {
 
     private boolean invalidated;
 
     @Override
-    public void draw(@NonNull Canvas canvas) {
-    }
-
-    @Override
-    public void invalidateSelf() {
-        super.invalidateSelf();
+    public void invalidateDrawable(@NonNull Drawable drawable) {
         invalidated = true;
     }
 
-    void assertInvalidated() {
+    @Override
+    public void scheduleDrawable(@NonNull Drawable drawable, @NonNull Runnable runnable, long l) {
+    }
+
+    @Override
+    public void unscheduleDrawable(@NonNull Drawable drawable, @NonNull Runnable runnable) {
+    }
+
+    public void assertInvalidated() {
         assertThat(invalidated, is(true));
         invalidated = false;
     }
 
-    void assertNotInvalidated() {
+    public void assertNotInvalidated() {
         assertThat(invalidated, is(false));
     }
 }

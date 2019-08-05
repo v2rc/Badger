@@ -14,9 +14,11 @@
  * limitations under the License.
  */
 
-package berlin.volders.badger;
+package berlin.volders.badger.test;
 
-class TestBadgerDrawableFactory implements BadgeDrawable.Factory<TestBadgeDrawable> {
+import berlin.volders.badger.BadgeDrawable;
+
+public class TestBadgerDrawableFactory implements BadgeDrawable.Factory<TestBadgeDrawable> {
 
     @Override
     public TestBadgeDrawable createBadge() {

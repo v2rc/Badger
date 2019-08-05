@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package berlin.volders.badger;
+package berlin.volders.badger.test;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -23,17 +23,19 @@ import android.graphics.Rect;
 import androidx.annotation.FloatRange;
 import androidx.annotation.NonNull;
 
+import berlin.volders.badger.BadgeShape;
+
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
-class TestBadgeShape extends BadgeShape {
+public class TestBadgeShape extends BadgeShape {
 
     private Canvas canvas;
     private Rect region;
     private int badgeColor;
 
-    TestBadgeShape(@FloatRange(from = 0, to = 1) float scale, float ratio, int gravity) {
+    public TestBadgeShape(@FloatRange(from = 0, to = 1) float scale, float ratio, int gravity) {
         super(scale, ratio, gravity);
     }
 
@@ -44,15 +46,15 @@ class TestBadgeShape extends BadgeShape {
         this.badgeColor = paint.getColor();
     }
 
-    void assertCanvas(Canvas canvas) {
+    public void assertCanvas(Canvas canvas) {
         assertThat(this.canvas, equalTo(canvas));
     }
 
-    void assertRegion(Rect region) {
+    public void assertRegion(Rect region) {
         assertThat(this.region, equalTo(region));
     }
 
-    void assertBadgeColor(int badgeColor) {
+    public void assertBadgeColor(int badgeColor) {
         assertThat(this.badgeColor, is(badgeColor));
     }
 }

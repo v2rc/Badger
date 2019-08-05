@@ -21,6 +21,10 @@ import android.graphics.PixelFormat;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.robolectric.RobolectricTestRunner;
+
+import berlin.volders.badger.test.TestBadgeDrawable;
 
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
@@ -29,6 +33,7 @@ import static org.hamcrest.Matchers.nullValue;
 import static org.junit.Assert.assertThat;
 
 @SuppressWarnings("WeakerAccess")
+@RunWith(RobolectricTestRunner.class)
 public class BadgeDrawableTest {
 
     TestBadgeDrawable badgeDrawable;

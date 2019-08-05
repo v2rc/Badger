@@ -18,11 +18,18 @@ package berlin.volders.badger;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.robolectric.RobolectricTestRunner;
+
+import berlin.volders.badger.test.TestBadgeShape;
+import berlin.volders.badger.test.TestCanvas;
+import berlin.volders.badger.test.TestDrawableCallback;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
 @SuppressWarnings("WeakerAccess")
+@RunWith(RobolectricTestRunner.class)
 public class CountBadgeTest {
 
     final int badgeColor = 0xff654321;

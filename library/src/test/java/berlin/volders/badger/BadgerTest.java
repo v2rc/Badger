@@ -24,9 +24,16 @@ import android.widget.ImageView;
 import androidx.test.core.app.ApplicationProvider;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.robolectric.RobolectricTestRunner;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import berlin.volders.badger.test.TestBadgeDrawable;
+import berlin.volders.badger.test.TestBadgerDrawableFactory;
+import berlin.volders.badger.test.TestDrawable;
+import berlin.volders.badger.test.TestMenuItem;
 
 import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.instanceOf;
@@ -34,6 +41,7 @@ import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
 @SuppressWarnings("WeakerAccess")
+@RunWith(RobolectricTestRunner.class)
 public class BadgerTest {
 
     final TestBadgerDrawableFactory factory = new TestBadgerDrawableFactory();

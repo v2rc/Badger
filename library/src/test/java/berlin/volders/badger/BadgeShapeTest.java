@@ -18,16 +18,19 @@ package berlin.volders.badger;
 
 import android.graphics.Paint;
 import android.graphics.Rect;
-import android.os.Build;
 import android.view.Gravity;
 import android.view.View;
 
-import androidx.test.filters.SdkSuppress;
-
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.robolectric.RobolectricTestRunner;
+
+import berlin.volders.badger.test.TestBadgeShape;
+import berlin.volders.badger.test.TestCanvas;
 
 @SuppressWarnings("WeakerAccess")
+@RunWith(RobolectricTestRunner.class)
 public class BadgeShapeTest {
 
     final Rect bounds = new Rect(0, 0, 64, 64);
@@ -84,7 +87,6 @@ public class BadgeShapeTest {
     }
 
     @Test
-    @SdkSuppress(minSdkVersion = Build.VERSION_CODES.JELLY_BEAN_MR1)
     public void draw_scale_ratio_end_center_ltr() {
         region.set(32, 24, 64, 40);
 
@@ -95,7 +97,6 @@ public class BadgeShapeTest {
     }
 
     @Test
-    @SdkSuppress(minSdkVersion = Build.VERSION_CODES.JELLY_BEAN_MR1)
     public void draw_scale_ratio_end_center_rtl() {
         region.set(0, 24, 32, 40);
 

@@ -28,6 +28,7 @@ import static org.hamcrest.Matchers.notNullValue;
 import static org.hamcrest.Matchers.nullValue;
 import static org.junit.Assert.assertThat;
 
+@SuppressWarnings("WeakerAccess")
 public class BadgeDrawableTest {
 
     TestBadgeDrawable badgeDrawable;
@@ -39,7 +40,7 @@ public class BadgeDrawableTest {
 
     @Test
     @SuppressWarnings("Range")
-    public void setAlpha() throws Exception {
+    public void setAlpha() {
         badgeDrawable.setAlpha(0);
         assertThat(badgeDrawable.getAlpha(), is(0));
         badgeDrawable.assertInvalidated();
@@ -66,14 +67,14 @@ public class BadgeDrawableTest {
     }
 
     @Test
-    public void getAlpha() throws Exception {
+    public void getAlpha() {
         assertThat(badgeDrawable.getAlpha(), is(255));
         badgeDrawable.setAlpha(43);
         assertThat(badgeDrawable.getAlpha(), is(43));
     }
 
     @Test
-    public void setColorFilter() throws Exception {
+    public void setColorFilter() {
         ColorFilter colorFilter = new ColorFilter();
 
         badgeDrawable.setColorFilter(colorFilter);
@@ -94,14 +95,14 @@ public class BadgeDrawableTest {
     }
 
     @Test
-    public void getColorFilter() throws Exception {
+    public void getColorFilter() {
         assertThat(badgeDrawable.getColorFilter(), nullValue());
         badgeDrawable.setColorFilter(new ColorFilter());
         assertThat(badgeDrawable.getColorFilter(), notNullValue());
     }
 
     @Test
-    public void getOpacity() throws Exception {
+    public void getOpacity() {
         badgeDrawable.setAlpha(0);
         assertThat(badgeDrawable.getOpacity(), is(PixelFormat.TRANSPARENT));
 

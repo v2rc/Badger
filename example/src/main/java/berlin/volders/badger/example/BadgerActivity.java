@@ -17,11 +17,13 @@
 package berlin.volders.badger.example;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import berlin.volders.badger.BadgeShape;
 import berlin.volders.badger.Badger;
@@ -52,13 +54,13 @@ public class BadgerActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_oval:
             case R.id.action_square:
             case R.id.action_circle:
-                // factory is not used for getting the badge
-                //noinspection ConstantConditions
+                // factory is not used for creating the badge
+                @SuppressWarnings("ConstantConditions")
                 CountBadge badge = Badger.sett(item, null);
                 badge.setCount(badge.getCount() + 1);
                 return true;

@@ -1,31 +1,40 @@
 buildscript {
     repositories {
+        google()
         jcenter()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.3'
+        classpath 'com.android.tools.build:gradle:3.4.2'
         classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
     }
 }
 
-allprojects {
+subprojects {
     repositories {
         google()
         jcenter()
     }
-}
 
-ext {
-    androidSupportVersion = '26.1.0'
-    xBuildToolsVersion = '26.0.2'
-    xTargetSdkVersion = 26
+    plugins.withType(com.android.build.gradle.BasePlugin) {
+        android {
+            compileSdkVersion 29
+
+            defaultConfig {
+                minSdkVersion 14
+                targetSdkVersion 29
+
+                testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+            }
+        }
+    }
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
-task wrapper(type: Wrapper) {
-    gradleVersion = '4.2.1'
+wrapper {
+    gradleVersion '5.5.1'
+    distributionType Wrapper.DistributionType.ALL
 }

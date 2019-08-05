@@ -17,7 +17,8 @@
 package berlin.volders.badger;
 
 import android.graphics.Canvas;
-import android.support.annotation.NonNull;
+
+import androidx.annotation.NonNull;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;

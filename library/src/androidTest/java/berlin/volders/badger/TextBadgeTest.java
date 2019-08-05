@@ -23,11 +23,12 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
+@SuppressWarnings("WeakerAccess")
 public class TextBadgeTest {
 
     final TestBadgeShape shape = new TestBadgeShape(1, 1, 0);
-    final int badgeColor = 0xff654321;
-    final int textColor = 0xff123456;
+    final int badgeColor = 0xff123456;
+    final int textColor = 0xff654321;
 
     TextBadge badge;
 
@@ -38,7 +39,7 @@ public class TextBadgeTest {
     }
 
     @Test
-    public void draw() throws Exception {
+    public void draw() {
         TestCanvas canvas = new TestCanvas();
 
         badge.draw(canvas);
@@ -49,7 +50,7 @@ public class TextBadgeTest {
     }
 
     @Test
-    public void draw_nothing_on_count_empty_string() throws Exception {
+    public void draw_nothing_on_count_empty_string() {
         TestCanvas canvas = new TestCanvas();
         badge.setText("");
 
@@ -59,7 +60,7 @@ public class TextBadgeTest {
     }
 
     @Test
-    public void setText() throws Exception {
+    public void setText() {
         String expected = badge.getText() + "::2";
         TestDrawableCallback callback = new TestDrawableCallback();
         badge.setCallback(callback);
@@ -71,7 +72,7 @@ public class TextBadgeTest {
     }
 
     @Test
-    public void setText_ignore_unchanged() throws Exception {
+    public void setText_ignore_unchanged() {
         TestDrawableCallback callback = new TestDrawableCallback();
         badge.setCallback(callback);
 
@@ -81,7 +82,7 @@ public class TextBadgeTest {
     }
 
     @Test
-    public void getText() throws Exception {
+    public void getText() {
         badge.setText("");
         assertThat(badge.getText(), equalTo(""));
         badge.setText("1");
@@ -91,7 +92,7 @@ public class TextBadgeTest {
     }
 
     @Test
-    public void Factory() throws Exception {
+    public void Factory() {
         TextBadge.Factory<TextBadge> factory
                 = new TextBadge.Factory<TextBadge>(shape, badgeColor, textColor) {
             @Override

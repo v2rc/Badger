@@ -17,9 +17,9 @@
 package berlin.volders.badger;
 
 import android.content.Context;
-import android.support.annotation.ColorInt;
-import android.support.annotation.IntRange;
-import android.support.annotation.NonNull;
+import androidx.annotation.ColorInt;
+import androidx.annotation.IntRange;
+import androidx.annotation.NonNull;
 
 /**
  * Implementation of {@link TextBadge} displaying a positive count on the badge.

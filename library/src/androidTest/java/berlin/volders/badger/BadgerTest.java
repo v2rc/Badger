@@ -18,9 +18,10 @@ package berlin.volders.badger;
 
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
-import android.support.test.InstrumentationRegistry;
 import android.view.MenuItem;
 import android.widget.ImageView;
+
+import androidx.test.core.app.ApplicationProvider;
 
 import org.junit.Test;
 
@@ -32,12 +33,13 @@ import static org.hamcrest.Matchers.instanceOf;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
+@SuppressWarnings("WeakerAccess")
 public class BadgerTest {
 
     final TestBadgerDrawableFactory factory = new TestBadgerDrawableFactory();
 
     @Test
-    public void sett_on_non_LayerDrawable() throws Exception {
+    public void sett_on_non_LayerDrawable() {
         Drawable drawable = new TestDrawable();
 
         Badger<TestBadgeDrawable> badger = Badger.sett(drawable, factory);
@@ -46,7 +48,7 @@ public class BadgerTest {
     }
 
     @Test
-    public void sett_on_LayerDrawable_without_badge() throws Exception {
+    public void sett_on_LayerDrawable_without_badge() {
         Drawable[] drawables = {new TestDrawable(), new TestDrawable()};
         LayerDrawable layer = new LayerDrawable(drawables);
 
@@ -56,7 +58,7 @@ public class BadgerTest {
     }
 
     @Test(expected = IllegalStateException.class)
-    public void sett_on_LayerDrawable_with_invalid_badge() throws Exception {
+    public void sett_on_LayerDrawable_with_invalid_badge() {
         LayerDrawable layer = new LayerDrawable(new Drawable[]{new TestDrawable(), new TestDrawable()});
         layer.setId(0, R.id.badger_drawable);
 
@@ -64,7 +66,7 @@ public class BadgerTest {
     }
 
     @Test
-    public void sett_on_LayerDrawable_with_valid_badge() throws Exception {
+    public void sett_on_LayerDrawable_with_valid_badge() {
         Drawable[] drawables = {factory.createBadge(), new TestDrawable()};
         LayerDrawable layer = new LayerDrawable(drawables);
         layer.setId(0, R.id.badger_drawable);
@@ -75,7 +77,7 @@ public class BadgerTest {
     }
 
     @Test
-    public void sett_on_MenuItem() throws Exception {
+    public void sett_on_MenuItem() {
         Drawable[] drawables = {new TestDrawable(), new TestDrawable()};
         LayerDrawable layer = new LayerDrawable(drawables);
         MenuItem menuItem = new TestMenuItem();
@@ -87,10 +89,10 @@ public class BadgerTest {
     }
 
     @Test
-    public void sett_on_ImageView() throws Exception {
+    public void sett_on_ImageView() {
         Drawable[] drawables = {new TestDrawable(), new TestDrawable()};
         LayerDrawable layer = new LayerDrawable(drawables);
-        ImageView imageView = new ImageView(InstrumentationRegistry.getContext());
+        ImageView imageView = new ImageView(ApplicationProvider.getApplicationContext());
         imageView.setImageDrawable(layer);
 
         TestBadgeDrawable badge = Badger.sett(imageView, factory);

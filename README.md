@@ -121,7 +121,7 @@ allprojects {
 
 ```groovy
 dependencies {
-    compile "com.github.v2rc:badger:$badgerVersion"
+    implementation "com.github.v2rc:badger:$badgerVersion"
 }
 ```
 
@@ -129,7 +129,7 @@ or for the legacy version
 
 ```groovy
 dependencies {
-    compile 'berlin.volders:badger:0.2.1'
+    implementation 'berlin.volders:badger:0.2.1'
 }
 ```
 

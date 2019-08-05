@@ -18,6 +18,8 @@ package berlin.volders.badger;
 
 import android.graphics.drawable.Drawable;
 
+import androidx.annotation.NonNull;
+
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
@@ -26,16 +28,16 @@ public class TestDrawableCallback implements Drawable.Callback {
     private boolean invalidated;
 
     @Override
-    public void invalidateDrawable(Drawable drawable) {
+    public void invalidateDrawable(@NonNull Drawable drawable) {
         invalidated = true;
     }
 
     @Override
-    public void scheduleDrawable(Drawable drawable, Runnable runnable, long l) {
+    public void scheduleDrawable(@NonNull Drawable drawable, @NonNull Runnable runnable, long l) {
     }
 
     @Override
-    public void unscheduleDrawable(Drawable drawable, Runnable runnable) {
+    public void unscheduleDrawable(@NonNull Drawable drawable, @NonNull Runnable runnable) {
     }
 
     void assertInvalidated() {

@@ -19,8 +19,9 @@ package berlin.volders.badger;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
-import android.support.annotation.FloatRange;
-import android.support.annotation.NonNull;
+
+import androidx.annotation.FloatRange;
+import androidx.annotation.NonNull;
 
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
@@ -32,7 +33,7 @@ class TestBadgeShape extends BadgeShape {
     private Rect region;
     private int badgeColor;
 
-    protected TestBadgeShape(@FloatRange(from = 0, to = 1) float scale, float ratio, int gravity) {
+    TestBadgeShape(@FloatRange(from = 0, to = 1) float scale, float ratio, int gravity) {
         super(scale, ratio, gravity);
     }
 

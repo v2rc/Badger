@@ -18,13 +18,15 @@ package berlin.volders.badger;
 
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
-import android.support.annotation.NonNull;
 import android.view.MenuItem;
 import android.widget.ImageView;
+
+import androidx.annotation.NonNull;
 
 /**
  * Utility to wrap a drawable with a badge on it.
  */
+@SuppressWarnings("WeakerAccess")
 public class Badger<T extends BadgeDrawable> {
 
     /**

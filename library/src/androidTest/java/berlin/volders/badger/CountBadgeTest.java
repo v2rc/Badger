@@ -22,6 +22,7 @@ import org.junit.Test;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
+@SuppressWarnings("WeakerAccess")
 public class CountBadgeTest {
 
     final int badgeColor = 0xff654321;
@@ -38,7 +39,7 @@ public class CountBadgeTest {
     }
 
     @Test
-    public void draw() throws Exception {
+    public void draw() {
         TestCanvas canvas = new TestCanvas();
 
         badge.draw(canvas);
@@ -49,7 +50,7 @@ public class CountBadgeTest {
     }
 
     @Test
-    public void draw_nothing_on_count_0() throws Exception {
+    public void draw_nothing_on_count_0() {
         TestCanvas canvas = new TestCanvas();
         badge.setCount(0);
 
@@ -59,7 +60,7 @@ public class CountBadgeTest {
     }
 
     @Test
-    public void setCount() throws Exception {
+    public void setCount() {
         int expected = badge.getCount() + 43;
         TestDrawableCallback callback = new TestDrawableCallback();
         badge.setCallback(callback);
@@ -71,7 +72,7 @@ public class CountBadgeTest {
     }
 
     @Test
-    public void setCount_ignore_unchanged() throws Exception {
+    public void setCount_ignore_unchanged() {
         TestDrawableCallback callback = new TestDrawableCallback();
         badge.setCallback(callback);
 
@@ -81,13 +82,13 @@ public class CountBadgeTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void setCount_fail_on_negative() throws Exception {
+    public void setCount_fail_on_negative() {
         //noinspection Range
         badge.setCount(-1);
     }
 
     @Test
-    public void getCount() throws Exception {
+    public void getCount() {
         badge.setCount(0);
         assertThat(badge.getCount(), is(0));
         badge.setCount(1);
@@ -97,7 +98,7 @@ public class CountBadgeTest {
     }
 
     @Test
-    public void Factory() throws Exception {
+    public void Factory() {
         TestCanvas canvas = new TestCanvas();
         CountBadge.Factory factory = new CountBadge.Factory(shape, badgeColor, textColor);
 

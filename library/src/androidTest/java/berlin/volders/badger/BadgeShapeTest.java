@@ -19,13 +19,15 @@ package berlin.volders.badger;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.os.Build;
-import android.support.test.filters.SdkSuppress;
 import android.view.Gravity;
 import android.view.View;
+
+import androidx.test.filters.SdkSuppress;
 
 import org.junit.Before;
 import org.junit.Test;
 
+@SuppressWarnings("WeakerAccess")
 public class BadgeShapeTest {
 
     final Rect bounds = new Rect(0, 0, 64, 64);
@@ -124,7 +126,7 @@ public class BadgeShapeTest {
     }
 
     @Test
-    public void circle() throws Exception {
+    public void circle() {
         region.set(16, 16, 48, 48);
 
         BadgeShape.circle(0.5f, Gravity.CENTER).onDraw(canvas, region, paint);
@@ -133,7 +135,7 @@ public class BadgeShapeTest {
     }
 
     @Test
-    public void oval() throws Exception {
+    public void oval() {
         region.set(16, 24, 48, 40);
 
         BadgeShape.oval(0.5f, 2, Gravity.CENTER).onDraw(canvas, region, paint);
@@ -142,7 +144,7 @@ public class BadgeShapeTest {
     }
 
     @Test
-    public void rect() throws Exception {
+    public void rect() {
         region.set(16, 24, 48, 40);
 
         BadgeShape.rect(0.5f, 2, Gravity.CENTER).onDraw(canvas, region, paint);
@@ -151,7 +153,7 @@ public class BadgeShapeTest {
     }
 
     @Test
-    public void rect_without_radius() throws Exception {
+    public void rect_without_radius() {
         region.set(16, 24, 48, 40);
 
         BadgeShape.rect(0.5f, 2, Gravity.CENTER, 0).onDraw(canvas, region, paint);
@@ -160,7 +162,7 @@ public class BadgeShapeTest {
     }
 
     @Test
-    public void rect_with_radius() throws Exception {
+    public void rect_with_radius() {
         region.set(16, 24, 48, 40);
         float radius = 0.25f;
         Object[] params = {0.5f * region.height() * radius, 0.5f * region.height() * radius};
@@ -171,7 +173,7 @@ public class BadgeShapeTest {
     }
 
     @Test
-    public void square() throws Exception {
+    public void square() {
         region.set(16, 16, 48, 48);
 
         BadgeShape.square(0.5f, Gravity.CENTER).onDraw(canvas, region, paint);
@@ -180,7 +182,7 @@ public class BadgeShapeTest {
     }
 
     @Test
-    public void square_with_radius() throws Exception {
+    public void square_with_radius() {
         region.set(16, 16, 48, 48);
         float radius = 0.25f;
         Object[] params = {0.5f * region.width() * radius, 0.5f * region.height() * radius};

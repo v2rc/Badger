@@ -23,9 +23,10 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.RectF;
-import android.support.annotation.FloatRange;
-import android.support.annotation.NonNull;
 import android.util.TypedValue;
+
+import androidx.annotation.FloatRange;
+import androidx.annotation.NonNull;
 
 import berlin.volders.badger.BadgeShape;
 

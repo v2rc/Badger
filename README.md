@@ -2,7 +2,8 @@
 ===============================
 [![Build][1]][2]
 [![Release][3]][4]
-[![Versions][7]][8]
+[![Versions][5]][6]
+[![Arsenal][7]][8]
 
 
 *Badger* is a generalized single purpose library for adding badges to drawables
@@ -26,23 +27,17 @@ a badge already set, this one gets reused instead.
 
 #### Add a badge to a `MenuItem`
 
-```java
-BadgeDrawable badge = Badger.sett(menuItem, badgeFactory);
-```
+    BadgeDrawable badge = Badger.sett(menuItem, badgeFactory);
 
 #### Add a badge to an `ImageView`
 
-```java
-BadgeDrawable badge = Badger.sett(imageView, badgeFactory);
-```
+    BadgeDrawable badge = Badger.sett(imageView, badgeFactory);
 
 #### Add a badge to a `Drawable`
 
-```java
-Badger<?> badger = Badger.sett(drawable, badgeFactory);
-BadgeDrawable badge = badger.badge;
-drawable = badger.drawable;
-```
+    Badger<?> badger = Badger.sett(drawable, badgeFactory);
+    BadgeDrawable badge = badger.badge;
+    drawable = badger.drawable;
 
 #### The `BadgeDrawable`
 
@@ -56,11 +51,9 @@ purpose implementation `CountBadge`.
 The type of the badge itself is determined by the implementation of the
 `BadgeDrawable.Factory` supplied.
 
-```java
-public interface Factory<T extends BadgeDrawable> {
-    T createBadge();
-}
-```
+    public interface Factory<T extends BadgeDrawable> {
+        T createBadge();
+    }
 
 The provided `BadgeDrawable` implementations define their own factories
 `TextBadge.Factory` and `CountBadge.Factory`.
@@ -78,11 +71,9 @@ actual size and position of the badge itself.
 
 ![Example](assets/example.png)
 
-```java
-BadgeShape.oval(1f, 2f, Gravity.BOTTOM) // scale = 1 | aspectRatio = 2
-BadgeShape.square(1f, Gravity.NO_GRAVITY, .5f) // scale = 1 | radiusFactor = 0.5
-BadgeShape.circle(.5f, Gravity.END | Gravity.TOP) // scale = 0.5
-```
+    BadgeShape.oval(1f, 2f, Gravity.BOTTOM) // scale = 1 | aspectRatio = 2
+    BadgeShape.square(1f, Gravity.NO_GRAVITY, .5f) // scale = 1 | radiusFactor = 0.5
+    BadgeShape.circle(.5f, Gravity.END | Gravity.TOP) // scale = 0.5
 
 #### scale
 The `scale` determines the actual size of the badge drawable relative to the
@@ -106,32 +97,17 @@ badge.
 Installation
 ------------
 
-**Step 1** Add JitPack in your root build.gradle at the end of repositories:
+Add the updated dependency supporting _AndroidX_
 
-```groovy
-allprojects {
-    repositories {
-        ...
-        maven { url 'https://jitpack.io' }
+    dependencies {
+        implementation "com.github.v2rc:badger:$badgerVersion"
     }
-}
-```
 
-**Step 2** Add the dependency
+or the legacy version supporting the _Support Library_
 
-```groovy
-dependencies {
-    implementation "com.github.v2rc:badger:$badgerVersion"
-}
-```
-
-or for the legacy version
-
-```groovy
-dependencies {
-    implementation 'berlin.volders:badger:0.2.1'
-}
-```
+    dependencies {
+        implementation 'berlin.volders:badger:0.2.1'
+    }
 
 Shortcomings
 ------------
@@ -139,16 +115,10 @@ Shortcomings
 The `TextBadge` only supports the RTL layout direction for Android Marshmallow
 and later.
 
-Badger requires to have the `buildToolsVersion` up-to-date. Please update to the lasted `buildToolsVersion` if the following issue appears:
-
-    Error:(330) Attribute "colorAccent" has already been defined
-    Error:(573) Attribute "titleTextColor" has already been defined
-    Error:Execution failed for task ':app:processDebugResources'.
-    > com.android.ide.common.process.ProcessException: Failed to execute aapt
-
 License
 -------
 
+    Copyright (C) 2016 Christian Schmitz
     Copyright (C) 2016 volders GmbH with <3 in Berlin
 
     Licensed under the Apache License, Version 2.0 (the "License");
@@ -169,5 +139,7 @@ License
   [2]: https://travis-ci.org/v2rc/Badger
   [3]: https://jitpack.io/v/v2rc/badger.svg
   [4]: https://jitpack.io/#v2rc/badger
-  [7]: https://asapi.herokuapp.com/com.github.v2rc/badger@svg
-  [8]: https://asapi.herokuapp.com/com.github.v2rc/badger
+  [5]: https://asapi.herokuapp.com/com.github.v2rc/badger@svg
+  [6]: https://asapi.herokuapp.com/com.github.v2rc/badger
+  [7]: https://img.shields.io/badge/Android%20Arsenal-Badger-informational.svg
+  [8]: https://android-arsenal.com/details/1/7811
